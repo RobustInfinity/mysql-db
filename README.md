@@ -26,6 +26,7 @@
 ##### @route POST /
 ##### @description Search user using emailId
 
+![image](https://user-images.githubusercontent.com/26899808/56733357-82877880-677d-11e9-838d-9d044a03cf27.png)
 
 ************************
 
