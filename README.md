@@ -20,6 +20,7 @@
 ##### @route GET /delete/:emailId
 ##### @description Delete the user after searching
 
+![image](https://user-images.githubusercontent.com/26899808/56733406-b2368080-677d-11e9-9362-38f2b3507f09.png)
 
 ************************
 
