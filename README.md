@@ -32,3 +32,9 @@
 ##### @route POST /add
 ##### @description Register user if not exists, else update the details
 
+![image](https://user-images.githubusercontent.com/26899808/56733077-bf9f3b00-677c-11e9-8db9-839ae8181d86.png)
+
+##### @response 
+
+*************************
+
