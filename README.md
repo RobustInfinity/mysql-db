@@ -13,6 +13,7 @@
 ### @route GET /add
 ### @description Fetch user register page
 
+![image](https://user-images.githubusercontent.com/26899808/56732924-53bcd280-677c-11e9-81f4-9d95666b2328.png)
 
 ************************
 
