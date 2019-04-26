@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>Db-intern</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="col-md-5 col-sm-8 container" style="margin-top : 5rem">
+            <div class="row">
+          <div class="container">
+              <div class="row justify-content-between">
+                  <h2 style="text-align : center">Input Form</h3>
+                  <a class="btn text-primary" href="/add" >Refresh</a>
+                  <div class="container" style="padding : 0px">
+                    <small>Register yourself. Also update your details using Email. </small>
+                  </div>
+                  </div>
+                  </div>
+                  <% if(message !== ''){%>
+                    <p class="text-success" style="text-align : center"><%= message %></p>
+                  <%}%> 
+            <form class="col-md-12 align-self-center needs-validation" style="margin-top : 1rem" name="createForm" method="POST" action="/add" novalidate>
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="userName" placeholder="Username" required>
+                    <% if(errors && errors.userName !== null){%>
+                      <p class="text-danger"><%= errors.userName %></p>
+                    <%}%>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="emailId">Email Id</label>
+                    <input type="email" class="form-control" id="emailId" name="emailId" placeholder="Email" required>
+                    <% if(errors !==null && errors.emailId !== null){%>
+                      <p class="text-danger"><%= errors.emailId %></p>
+                    <%}%>                          
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <% if(errors !==null && errors.password !== null){%>
+                      <p class="text-danger"><%= errors.password %></p>
+                    <%}%>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-12 mb-3">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumber" name="phoneNo" placeholder="Phone Number" required>
+                    <% if(errors !==null && errors.phoneNo !== null){%>
+                      <p class="text-danger"><%= errors.phoneNo %></p>
+                    <%}%>
+                  </div>
+                  </div>
+                  
+                <div class="container align-self-center">
+                    <div class="row justify-content-between">
+                        <button class="btn btn-primary " type="submit">Submit</button>
+                        <a href="/" class="btn">Back</a>
+                    </div>
+                </div>
+              </form>
+              </div>
+              </div>
+            </body>
+
+            <script>
+              (function(){
+                window.addEventListener('click',()=>{
+                  if(document.getElementsByClassName('text-danger').length > 0){
+                  var validation = document.getElementsByClassName('text-danger')
+                  for(var i = 0; i < validation.length ; i++){
+                    validation[i].style.display = 'none'
+                  }
+                }
+                })
+              })()
+            </script>
+          </html>

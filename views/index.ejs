@@ -1,0 +1,56 @@
+
+
+<html>
+    <head>
+        <title>Db-intern</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="col-md-5 col-sm-12 container" style="margin-top : 5rem">
+            <div class="row">
+                  <form class="form-inline col-md-12 align-self-center" method="POST" action="/">
+                    <% if(errors !==null && errors.emailId !== null){%>
+                      <p class="text-danger temp" style="text-align : center"><%= errors.emailId %></p>
+                    <%}%> 
+                    <% if(message !== ''){%>
+                      <p class="text-success temp" style="text-align : center"><%= message %></p>
+                    <%}%> 
+                      <div class="form-row col-md-10 col-sm-12 mb-2">
+                          <input type="email" class="form-control col-md-12" id="inputPassword2" name="emailId" placeholder="Search by Email">
+                        </div>
+                   <div></div>
+                      <button type="submit" class="btn btn-primary mb-2">Search</button>
+                        <div class=" col-md-10" style="padding : 0px 15px;">
+                          <div class="row justify-content-between">
+                            <a href="/" class="btn text-primary" style="font-size : 1rem">Refresh</a>
+                            <a href="/add" class="btn text-primary" style="font-size : 1rem">New User ?</a>
+                          </div>
+                        </div>
+                    </form>
+                    <% if(user !== null){ %>
+                    <div class="border border-secondary rounded col-md-8 align-self-center container">
+                      <p>Username : <%= user.userName %></p>
+                      <p>Email : <%= user.emailId %></p>
+                      <p>Phone Number : <%= user.phoneNo%></p>
+                      <p>Registered At : <%= user.dateTime%></p>
+                      <form class="form-inline col-md-12 align-self-center" method="GET" action="/delete/<%= user.emailId%>">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </body>
+    <script>
+        (function(){
+          window.addEventListener('click',()=>{
+            if(document.getElementsByClassName('text-danger')){
+            var validation = document.getElementsByClassName('text-danger')
+            for(var i = 0; i < validation.length ; i++){
+              validation[i].style.display = 'none'
+            }
+          }
+          })
+        })()
+      </script>
+  </html>
